@@ -6,9 +6,12 @@
     "ajv": "^6.5.4",
     "body-parser": "^1.18.3",
     "es2015": "0.0.0",
+    "express-graphql": "^0.6.12",
+    "graphql": "^14.0.2",
     "mongoose": "^5.2.17",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },
   "scripts": {
@@ -16,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "dev": "babel-node server.js"
+    "dev": "react-scripts start babel-node server.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -1,21 +1,34 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+//import CreateExercise from "./pages/CreateExercise";
 
-class App extends Component {
+export default class App extends Component {
+  constructor() {
+    super();
+
+    this.state = { isAuthenticated: false };
+  }
+
   render() {
+    if (this.state.isAuthenticated) {
+      return (
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" exact component={Home} />
+          </Switch>
+        </BrowserRouter>
+      );
+    }
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Redirect to="/login" from="/" />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
-
-export default App;

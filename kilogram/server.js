@@ -2,13 +2,22 @@ var path = require("path");
 var express = require("express");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
+import graphqlHTTP from "express-graphql";
+//import schema from "./graphql/Schema/schema";
 import Exercises from "./mongoose/exercises";
 import Users from "./mongoose/users";
 
 var app = express();
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+/*app.use(
+  "/graphql",
+  graphqlHTTP(req => ({
+    schema
+    //,graphiql:true
+  }))
+);*/
 
 mongoose.connect(
   "mongodb://localhost:27017/local",
