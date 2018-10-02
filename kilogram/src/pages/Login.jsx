@@ -11,7 +11,7 @@ export default class Login extends Component {
         <Header />
         <LoginForm />
         <div className="create-account">
-          Or,
+          Or,&nbsp;
           <li>
             <Link to="/createAccount">Create an Account</Link>
           </li>

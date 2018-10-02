@@ -3,7 +3,6 @@ import "./App.css";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-//import CreateExercise from "./pages/CreateExercise";
 
 export default class App extends Component {
   constructor() {
