@@ -1,9 +1,12 @@
-import React from "react";
+import Link from "next/link";
 
-class Home extends React.Component {
-  render() {
-    return <p>Kilogram</p>;
-  }
-}
+const Home = props => (
+  <div>
+    <p>KILOGRAM</p>
+    <Link href="/log">
+      <a>Previous Workouts</a>
+    </Link>
+  </div>
+);
 
 export default Home;
